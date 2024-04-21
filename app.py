@@ -19,11 +19,11 @@ def generate_blog(topic,n_words,style):
     # Fetches LLM from Hugging Face Model Hub, after downloading it infers locally
     # Using pipeline also downloads the model and infers locally
     
-    # llm = CTransformers(model="TheBloke/Llama-2-7B-Chat-GGML",
-    #                     model_file="llama-2-7b-chat.ggmlv3.q8_0.bin",
-    #                     model_type='llama',
-    #                     config={'max_new_tokens': 256, 'repetition_penalty': 1.1, 'temperature':0.01},
-    #                     )
+    llm = CTransformers(model="TheBloke/Llama-2-7B-Chat-GGML",
+                        model_file="llama-2-7b-chat.ggmlv3.q8_0.bin",
+                        model_type='llama',
+                        config={'max_new_tokens': 256, 'repetition_penalty': 1.1, 'temperature':0.01},
+                        )
     
     # Loading local LLM and inferencing locally
     # llm = CTransformers(model="models/llama-2-7b-chat.ggmlv3.q8_0.bin",
@@ -31,7 +31,7 @@ def generate_blog(topic,n_words,style):
     #                     config={'max_new_tokens': 256, 'repetition_penalty': 1.1, 'temperature':0.01}
     #                     )
     
-    llm = HuggingFaceHub(repo_id = "TheBloke/Llama-2-7B-Chat-GGML")
+    # llm = HuggingFaceHub(repo_id = "TheBloke/Llama-2-7B-Chat-GGML")
     
 
     mytemplate = f'''
